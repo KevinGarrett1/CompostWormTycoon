@@ -1,0 +1,394 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+#hero {
+  background-image: url('../img/main-page-image.png'); /* Sets the hero image */
+  background-size: cover; /* Ensures the image fully covers the section */
+  background-position: center; /* Centers the image nicely */
+  color: white; /* Keeps the text readable on the image */
+  padding: 50px; /* Adds spacing inside the hero section */
+  height: 70vh; /* Sets the section to take 70% of the viewport height */
+  display: flex; /* Flexbox for aligning content */
+  align-items: center; /* Vertically centers the text */
+  justify-content: flex-start; /* Horizontally aligns the text to the left */
+}
+
+#hero h1,
+#hero p {
+  max-width: 50%; /* Limits the text width for better readability */
+  margin: 0; /* Removes default margins */
+}
+
+#hero h1 {
+  font-size: 2.8rem; /* Larger font size for the headline */
+  margin-bottom: 20px; /* Adds space below the headline */
+}
+
+#hero p {
+  font-size: 1.2rem; /* Makes the paragraph readable but smaller than the heading */
+  margin-bottom: 20px; /* Adds space between the paragraph and the button */
+}
+
+#cta-button {
+  font-size: 1rem; /* Standard button text size */
+  padding: 12px 25px; /* Adds padding to the button for better usability */
+  background-color: #4caf50; /* Earthy green color for the button */
+  color: white; /* White text on the button */
+  border: none; /* Removes default borders */
+  border-radius: 5px; /* Adds smooth rounded corners */
+  cursor: pointer; /* Makes the button clickable */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+}
+
+#cta-button:hover {
+  background-color: #45a049; /* Slightly darker green when hovered */
+}
+/* Highlighted text style */
+.highlight {
+  background-color: yellow; /* Highlight background color */
+  color: black; /* Text color */
+  padding: 5px; /* Padding around the text */
+  border-radius: 5px; /* Rounded corners for a smoother look */
+  font-weight: bold; /* Make the text bold */
+}
+
+/* Making sure the images stay lined up right and resize smooth */
+#image-container {
+  text-align: center; /* Centers the image */
+  margin-top: 20px; /* Adds some spacing above the image */
+}
+
+#image-container img {
+  max-width: 100%; /* Ensures the image scales properly */
+  height: auto; /* Maintains the aspect ratio */
+  border-radius: 5px; /* Optional: Rounds the corners of the image */
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* ========================================================================== */
+/* Responsive Design */
+/* ========================================================================== */
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjusts font size for smaller screens */
+  }
+
+  #hero {
+    padding: 20px; /* Reduces padding for the hero section */
+    height: auto; /* Allows the section to adapt height dynamically */
+  }
+
+  #hero h1 {
+    font-size: 2rem; /* Reduces headline size for smaller screens */
+  }
+
+  #hero p {
+    font-size: 1rem; /* Makes paragraph text smaller */
+  }
+
+  #cta-button {
+    font-size: 0.9rem; /* Reduces button text size */
+    padding: 8px 16px; /* Adjusts padding for a smaller button */
+  }
+
+  img {
+    width: 100%; /* Ensures images are responsive and fit the screen */
+    height: auto; /* Maintains aspect ratio */
+  }
+
+  table {
+    font-size: 0.9rem; /* Reduces table font size for smaller screens */
+  }
+
+  nav ul li {
+    display: block; /* Stacks navigation items vertically */
+    margin-bottom: 10px; /* Adds space between items */
+  }
+}
+/* ========================================================================== */
+/* Dropdown Menu - Keepin' It Clean and Functional */
+/* ========================================================================== */
+
+.dropdown {
+  position: relative; /* So this acts like a container for dropdown items */
+}
+
+.dropdown-menu {
+  display: none; /* Hides the dropdown at first */
+  position: absolute;
+  top: 100%; /* Makes it pop right under the parent menu item */
+  left: 0;
+  background-color: #fff; /* Fresh white dropdown background */
+  padding: 10px;
+  border: 1px solid #ccc; /* A lil’ border to keep it sharp */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds some smooth shadow */
+  list-style: none; /* No bullets—keep it neat */
+  z-index: 1000; /* So it stays on top of everything else */
+}
+
+.dropdown-menu li {
+  margin: 5px 0; /* Gives space between items so it ain’t cramped */
+}
+
+.dropdown-menu li a {
+  text-decoration: none; /* No underline on the links */
+  color: #222; /* A clean dark color for the text */
+  font-size: 0.95rem; /* Adjusts the size just a bit */
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block; /* This makes the dropdown show up when you hover */
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey - Compost Worm Tycoon</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- Hookin' up the CSS to make it look good -->
+</head>
+<body>
+<!-- Header Section -->
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li> <!-- Back to where it all begins -->
+      <li><a href="how-it-works.html">How It Works</a></li> <!-- Breakin' it down for the folks -->
+      <li><a href="features.html">Features</a></li> <!-- All the dope game features -->
+      <li><a href="signup.html">Sign Up</a></li> <!-- Get folks to join the movement -->
+      <li><a href="survey.html">Survey</a></li> <!-- Slide into the survey page -->
+    </ul>
+  </nav>
+</header>
+
+<!-- Survey Section -->
+<main>
+  <section id="survey">
+    <h2>Help Us Improve Compost Worm Tycoon!</h2> <!-- Keepin' it real—askin' for feedback -->
+    <p>Tell us what features you’re excited about and what you'd like to see in the game.</p> <!-- Setting the vibe for the survey -->
+    <form id="survey-form">
+      <!-- Asking about their worm preferences 'cause that's what we do -->
+      <label for="favorite-worm">Favorite Worm Type:</label>
+      <select id="favorite-worm" name="favorite-worm" required>
+        <option value="" disabled selected>Select one</option> <!-- Make sure they gotta pick something -->
+        <option value="red-wigglers">Red Wigglers</option> <!-- The compost MVPs -->
+        <option value="european-nightcrawlers">European Nightcrawlers</option> <!-- Fancy and effective -->
+        <option value="blue-worms">Blue Worms</option> <!-- Tropical, fast, and furious -->
+      </select><br><br>
+
+      <!-- What’s on their mind? Let's find out -->
+      <label for="most-wanted-feature">What Feature Are You Most Excited About?</label><br>
+      <textarea id="most-wanted-feature" name="most-wanted-feature" rows="4" placeholder="E.g., Automated composting bins" required></textarea><br><br>
+
+      <!-- Gauge their excitement with a lil' slider -->
+      <label for="gameplay-rating">How Excited Are You About the Gameplay?</label>
+      <input type="range" id="gameplay-rating" name="gameplay-rating" min="1" max="5" step="1">
+      <span id="rating-display">3</span>/5<br><br>
+
+      <!-- Hit 'em with that button to seal the deal -->
+      <button type="submit">Submit Your Feedback</button>
+    </form>
+  </section>
+</main>
+
+<!-- Footer Section -->
+<footer>
+  <p>© 2024 Compost Worm Tycoon. Join us and save the planet!</p> <!-- Wrapping it up with some good vibes -->
+</footer>
+<script src="js/app.js" defer></script> <!-- Plugging in the interactivity -->
+</body>
+</html>
